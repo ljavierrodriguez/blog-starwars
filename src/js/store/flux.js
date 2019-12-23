@@ -12,7 +12,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			name: "Luis J. Rodriguez O."
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +38,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			mensaje: () => {
+				alert("Hola");
+			},
+			getFilms: url => {
+				fetch(url)
+					.then(resp => resp.json())
+					.then(data => console.log(data));
 			}
 		}
 	};
